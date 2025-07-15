@@ -1,0 +1,5 @@
+hysteria_domain: sub1.example.com
+hysteria_main_domain: "{{ hysteria_domain | regex_search('([^.]+\\.[^.]+)$') }}"
+hysteria_auth: Passowrd
+hysteria_obfs_password: obfs_password
+

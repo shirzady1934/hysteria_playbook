@@ -1,0 +1,3 @@
+hysteria_mode: client
+hysteria_forward_port: <port want to forward>
+
