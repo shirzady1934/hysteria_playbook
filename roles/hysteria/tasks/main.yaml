@@ -1,0 +1,10 @@
+---
+- name: Include install tasks
+  import_tasks: install.yaml
+
+- name: Include config tasks
+  import_tasks: config.yaml
+
+- name: Include service tasks
+  import_tasks: service.yaml
+

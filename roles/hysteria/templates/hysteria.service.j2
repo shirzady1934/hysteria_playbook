@@ -1,0 +1,16 @@
+[Unit]
+Description=hysteria
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=root
+ExecStart={{ hysteria_bin_target }} {{ hysteria_mode }} -c {{ hysteria_cfg_file }}
+Restart=always
+RestartSec=2
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,15 @@
+server: "{{ hysteria_domain }}:443"
+auth: "{{ hysteria_auth }}"
+obfs:
+  type: salamander
+  salamander:
+    password: "{{ hysteria_obfs_password }}"
+
+  tls:
+    sni: "{{ hysteria_domain }}"
+    insecure: true
+
+tcpForwarding:
+  - listen: :{{ hysteria_forward_port }}
+    remote: 127.0.0.1:{{ hysteria_forward_port }}
+

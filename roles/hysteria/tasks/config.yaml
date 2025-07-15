@@ -1,0 +1,9 @@
+- name: Generate {{ hysteria_mode }} config
+  template:
+    src: "{{ hysteria_mode }}.yaml.j2"
+    dest: "{{ hysteria_cfg_file }}"
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart hysteria
+

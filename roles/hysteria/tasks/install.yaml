@@ -1,0 +1,26 @@
+- name: Copy Hysteria binary
+  copy:
+    src: "{{ hysteria_bin_source }}"
+    dest: "{{ hysteria_bin_target }}"
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Ensure hysteria config directory exists
+  file:
+    path: "{{ hysteria_cfg_dir }}"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Copy Let's Encrypt certs (server only)
+  copy:
+    src: letsencrypt/
+    dest: /etc/letsencrypt/
+    owner: root
+    group: root
+    mode: "0644"
+    directory_mode: "0755"
+  when: hysteria_mode == "server"
+

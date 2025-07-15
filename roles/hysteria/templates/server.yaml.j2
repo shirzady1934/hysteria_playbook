@@ -1,0 +1,19 @@
+listen: :443
+
+auth:
+  type: password
+  password: "{{ hysteria_auth }}"
+
+tls:
+  cert: /etc/letsencrypt/live/{{ hysteria_main_domain }}/fullchain.pem
+  key: /etc/letsencrypt/live/{{ hysteria_main_domain }}/privkey.pem
+
+mode: udp
+
+obfs:
+  type: salamander
+  salamander:
+    password: "{{ hysteria_obfs_password }}"
+
+reverse:
+  enabled: true

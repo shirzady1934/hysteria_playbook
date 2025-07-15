@@ -1,0 +1,10 @@
+- name: reload systemd
+  systemd:
+    daemon_reload: yes
+
+- name: restart hysteria
+  systemd:
+    name: "{{ hysteria_service_name }}"
+    state: restarted
+    enabled: yes
+

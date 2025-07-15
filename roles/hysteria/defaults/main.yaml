@@ -1,0 +1,5 @@
+hysteria_bin_source: hysteria
+hysteria_bin_target: /usr/local/bin/hysteria
+hysteria_cfg_dir: /etc/hysteria
+hysteria_cfg_file: "{{ hysteria_cfg_dir }}/{{ hysteria_mode }}.yaml"
+hysteria_service_name: "{{ 'hysteriac' if hysteria_mode == 'server' else 'hysterias' }}"
