@@ -1,0 +1,6 @@
+---
+- name: Deploy Hysteria everywhere
+  hosts: hysteria_server, hysteria_client
+  become: yes
+  roles:
+    - hysteria
